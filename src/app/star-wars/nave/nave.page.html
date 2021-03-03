@@ -1,0 +1,42 @@
+<ion-header>
+</ion-header>
+
+<ion-content >
+  <ion-card style="margin-top: 95px;">
+    <ion-card-header>
+      <ion-card-subtitle>Name</ion-card-subtitle>
+      <ion-card-title>{{stars.people.name}}</ion-card-title>
+      <ion-card-subtitle>Starships</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>Name:</ion-label>
+          <ion-label *ngFor="let s of stars.starships">
+            {{s.name}}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Model:</ion-label>
+          <ion-label *ngFor="let s of stars.starships">
+            {{s.model}}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Manufacturer:</ion-label>
+          <ion-label *ngFor="let s of stars.starships">
+            {{s.manufacturer}}
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>Passengers:</ion-label>
+          <ion-label *ngFor="let s of stars.starships">
+            {{s.passengers}}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

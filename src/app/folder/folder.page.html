@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <app-searchbar (value)="getValue($event)"></app-searchbar> 
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ folder }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <mat-spinner class="margin-center" *ngIf="showSpinner"></mat-spinner>
+    <ion-card class="margin-top" *ngIf="!showSpinner"> 
+      <ion-card-header>
+        <ion-card-title>{{pokemon.name | uppercase}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-card-subtitle>Type</ion-card-subtitle>
+        <ion-item *ngFor="let t of pokemon.types">
+          <ion-icon name="flash-sharp" slot="start"></ion-icon>
+          <ion-label>{{t.type.name}}</ion-label>
+        </ion-item>
+        <!-- <ion-card-subtitle>Abilities</ion-card-subtitle>
+        <ion-item *ngFor="let a of pokemon.abilities">
+          <ion-icon name="arrow-forward-sharp" slot="start"></ion-icon>
+          <ion-label>{{a.ability.name}}</ion-label>
+        </ion-item>
+        <ion-card-subtitle>Stats</ion-card-subtitle>
+        <ion-item *ngFor="let s of pokemon.stats">
+          <ion-icon name="lock-closed-sharp" slot="start"></ion-icon>
+          <ion-label>{{s.stat.name}}</ion-label>
+        </ion-item> -->
+      </ion-card-content>
+    </ion-card>
+    <div class="container">
+      <canvas #barChart></canvas>                                                                                       
+    </div>
+  </div>
+</ion-content>

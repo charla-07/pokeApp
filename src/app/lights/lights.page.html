@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <app-searchbar (value)="getValue($event)"></app-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Livingroom</ion-label>
+    <ion-toggle [(ngModel)]="livingroom" (ionChange)="updateStatus()"></ion-toggle>
+    
+    <ion-button (click)="view()" color="primary">Statistics</ion-button>
+  </ion-item>
+    <div *ngIf="'ver'">
+      <app-statistics></app-statistics>
+    </div>
+</ion-content>

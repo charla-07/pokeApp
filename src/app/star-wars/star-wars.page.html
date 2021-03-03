@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <app-searchbar (value)="getValue($event)"></app-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="personaje">
+      <ion-icon name="accessibility"></ion-icon>
+      <ion-label>Personaje</ion-label>
+      <ion-badge>6</ion-badge>
+    </ion-tab-button>
+
+    <ion-tab-button tab="peliculas">
+      <ion-icon name="easel"></ion-icon>
+      <ion-label>Peliculas</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="vehiculos">
+      <ion-icon name="airplane-outline"></ion-icon>
+      <ion-label>Vehiculos</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="naves">
+      <ion-icon name="rocket"></ion-icon>
+      <ion-label>Naves</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
